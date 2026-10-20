@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кымбат — 60 жаш</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#f8e8ce;
+ color:#76552e;
+ font-family:Montserrat,sans-serif;
+}
+#cover{
+ position:fixed;
+ inset:0;
+ z-index:10;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ background:#f8e8ce;
+ transition:1s;
+}
+.envelope{
+ width:100%;
+ max-width:450px;
+ height:100dvh;
+ max-height:900px;
+ position:relative;
+ overflow:hidden;
+ cursor:pointer;
+ background:url("assets/envelope.jpg") center/cover;
+}
+.door{
+ position:absolute;
+ top:0;
+ width:51%;
+ height:100%;
+ background:#fae8ca;
+ border:1px solid #d6b77f;
+ transition:transform 1.3s ease;
+}
+.left{left:0}
+.right{right:0}
+.seal{
+ position:absolute;
+ top:50%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ width:165px;
+ height:165px;
+ border-radius:48%;
+ display:grid;
+ place-items:center;
+ color:#fff0bd;
+ font:90px "Marck Script",cursive;
+ background:radial-gradient(circle,#f8df91,#c38b2b,#f9df8b,#a76f20);
+ border:5px double #fff0bd;
+ box-shadow:0 5px 20px #8b641c66;
+ transition:.5s;
+}
+.hint{
+ position:absolute;
+ bottom:8%;
+ width:100%;
+ text-align:center;
+ font-size:12px;
+ letter-spacing:2px;
+}
+.open .left{transform:translateX(-105%)}
+.open .right{transform:translateX(105%)}
+.open .seal{opacity:0}
+#cover.hide{opacity:0;visibility:hidden}
+#site{display:none}
+.page{
+ min-height:100dvh;
+ max-width:480px;
+ margin:auto;
+ padding:35px 28px;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ background-size:100% 100%;
+ background-position:center;
+ background-repeat:no-repeat;
+}
+.one{background-image:url("assets/invitation-60.jpg")}
+.two{background-image:url("assets/details.jpg")}
+.three{background-image:url("assets/yurt.jpg")}
+h1{
+ font:60px "Marck Script",cursive;
+ color:#b18230;
+ margin:5px;
+}
+h2{
+ font:35px "Marck Script",cursive;
+ color:#a7792e;
+}
+.age{
+ font:28px "Playfair Display",serif;
+ color:#ba8b35;
+}
+.poem{
+ font:20px/1.4 "Marck Script",cursive;
+}
+.text{
+ font-size:12px;
+ line-height:1.8;
+}
+.details{
+ width:100%;
+ background:#fffdf0dc;
+ padding:20px 12px;
+ border:1px solid #c49a4b;
+}
+.detail{
+ margin:20px 0;
+ font-size:13px;
+ line-height:1.8;
+}
+button{
+ border:1px solid #c39a4b;
+ border-radius:30px;
+ padding:12px 20px;
+ color:#8b672d;
+ background:#fff8e8;
+ cursor:pointer;
+}
+#musicBtn{
+ position:fixed;
+ z-index:5;
+ bottom:18px;
+ right:18px;
+ width:48px;
+ height:48px;
+ border-radius:50%;
+ display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="cover">
+ <div class="envelope" id="envelope" onclick="openInvite()">
+  <div class="door left"></div>
+  <div class="door right"></div>
+  <div class="seal">К</div>
+  <div class="hint">КОНВЕРТТИ АЧУУ ҮЧҮН БАСЫҢЫЗ</div>
+ </div>
+</div>
+
+<audio id="music" src="assets/music.mp3" loop></audio>
+<button id="musicBtn" onclick="toggleMusic()">♫</button>
+
+<div id="site">
+
+<section class="page one">
+ <p>СИЗДЕРДИ ЧЫН ЖҮРӨКТӨН ЧАКЫРАБЫЗ</p>
+ <h1>Кымбат</h1>
+ <div class="age">60 жаш</div>
+
+ <div class="poem">
+ АЛЛАДАН НАСИП БОЛУП БАГЫБЫЗГА,<br>
+ АР ЖЫЛЫ ЖАШ КОШУЛУП ЖАШЫБЫЗГА.<br>
+ БУЙРУДУ УШУЛ KYHY ЖАРАТКАНДАН,<br>
+ АК ДАСТОРКОН ЖАЙЫЛЫП<br>
+ БААРЫБЫЗГА.<br>
+ БАТАНЫЗДАРДЫ БЕРУУНУ СУРАНАБЫЗ,<br>
+ КОНОК БОЛУП САЛТАНАТТУУ ТОЮБУЗДА!
+ </div>
+
+ <h2>БИЗДИН КАДЫРЛУУ КОНОКТОРУБУЗ!</h2>
+
+ <div class="text">
+ СИЗДЕРДИ<br>
+ <b>КЫМБАТ 60 ЖАШ КУТТУУ МААРАКЕСИНЕ</b><br>
+ КЕЛИП, АК ДАСТОРКОНДО БАТА БЕРИП,
+ КАДЫРЛУУ КОНОГУБУЗ БОЛУУГА
+ ЧАКЫРАБЫЗ!
+ </div>
+
+ <p class="poem">Сиздердин келишиздер — биз үчүн чоң кубаныч!</p>
+</section>
+
+<section class="page two">
+ <div class="details">
+  <h2>Кымбат</h2>
+  <div class="age">60 жаш мааракеси</div>
+
+  <div class="detail">
+   📅<br><b>16.11.2026</b>
+  </div>
+
+  <div class="detail">
+   🕓<br><b>Саат 16:00</b>
+  </div>
+
+  <div class="detail">
+   📍<br><b>Бишкек шаары</b><br>
+   Ресторан «Алтын Арашан»
+  </div>
+
+  <div class="detail">
+   <b>Дареги:</b><br>
+   7 апрель (Алматинская не доезжая
+   кольца Ахунбаева справа)
+  </div>
+
+  <button onclick="window.open('https://www.google.com/maps/search/?api=1&query=Алтын+Арашан+Бишкек','_blank')">
+   КАРТАДАН КӨРҮҮ
+  </button>
+ </div>
+</section>
+
+<section class="page three">
+ <div class="details">
+  <h2>Кымбат</h2>
+  <p class="poem">
+   Ак дасторконубуздун төрүнөн орун алып,
+   жакшы тилек-батаңыздарды берип кетиңиздер!
+  </p>
+  <p>УРМАТ-СЫЙ МЕНЕН КҮТӨБҮЗ</p>
+ </div>
+</section>
+
+</div>
+
+<script>
+async function openInvite(){
+ const envelope=document.getElementById('envelope');
+ const cover=document.getElementById('cover');
+ const site=document.getElementById('site');
+ const music=document.getElementById('music');
+
+ envelope.classList.add('open');
+
+ setTimeout(()=>{
+  cover.classList.add('hide');
+  site.style.display='block';
+  document.getElementById('musicBtn').style.display='block';
+ },900);
+
+ try{
+  await music.play();
+ }catch(e){
+  console.log('Музыканы баскыч менен баштасаңыз болот');
+ }
+}
+
+async function toggleMusic(){
+ const music=document.getElementById('music');
+ if(music.paused){
+  try{await music.play()}catch(e){}
+ }else{
+  music.pause();
+ }
+}
+</script>
+
+</body>
+</html>
